@@ -4,7 +4,7 @@ import { Consultorio } from '../../models/consultorio';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-consultorio',
   templateUrl: './consultorio.component.html',
   styleUrls: ['./consultorio.component.css']
 })
@@ -19,7 +19,7 @@ export class ConsultorioComponent implements OnInit {
     this.getConsultorios();
   }
 
-  // defini se um consultorioro será criado ou atualizado
+  // defini se um consultorio será criado ou atualizado
   saveConsultorio(form: NgForm) {
     if (this.consultorio.id !== undefined) {
       this.consultorioService.updateConsultorio(this.consultorio).subscribe(() => {
