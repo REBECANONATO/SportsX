@@ -1,6 +1,7 @@
 ﻿using ConsulAPI.Executor;
 using ConsulAPI.Models.DTO;
 using ConsulAPI.Models.Model;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -27,12 +28,14 @@ namespace ConsulAPI.Controllers
         }
 
         // GET: Consultorios
+        [EnableCors("PolicyNames.AllowOrigins")]
         public async Task<List<ConsultorioDto>> Index()
         {
             return (await _buscarConsultorioExecutor.Executor(null)).ToList();
         }
 
         // GET: Consultorios/Details/5
+        [EnableCors("PolicyNames.AllowOrigins")]
         public async Task<List<ConsultorioDto>> Details(int? id)
         {
 

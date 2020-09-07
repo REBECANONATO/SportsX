@@ -181,3 +181,4 @@ D:\GitHub\GerenciamentoConsultorio\back\ConsulAPI\ConsulAPI\obj\Debug\netcoreapp
 D:\GitHub\GerenciamentoConsultorio\back\ConsulAPI\ConsulAPI\obj\Debug\netcoreapp3.1\ConsulAPI.dll
 D:\GitHub\GerenciamentoConsultorio\back\ConsulAPI\ConsulAPI\obj\Debug\netcoreapp3.1\ConsulAPI.pdb
 D:\GitHub\GerenciamentoConsultorio\back\ConsulAPI\ConsulAPI\obj\Debug\netcoreapp3.1\ConsulAPI.genruntimeconfig.cache
+D:\GitHub\GerenciamentoConsultorio\back\ConsulAPI\ConsulAPI\obj\Debug\netcoreapp3.1\ConsulAPI.csprojAssemblyReference.cache
