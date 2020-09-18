@@ -1,19 +1,16 @@
 import React from 'react';
-import api from '../service/api';
+import api from '../../service/api';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import {  IconButton  }  from '@material-ui/core';
-import { Edit, Delete } from '@material-ui/icons';
+import { FiEdit3, FiDelete  } from "react-icons/fi";
 import './index.css';
 
 function Listar({ clienteId }){
-    // const { clienteId, ...rest } = props;
-
     async function handleDelete(id) {
         console.log(id);
         try {
             await api.post('/Clientes/Delete/'+id);
-            //setIncidents(incidents.filter(incident => incident.id !== id));
           } catch (err) {
             alert('Erro ao deletar caso, tente novamente.');
           }
@@ -41,11 +38,11 @@ function Listar({ clienteId }){
             </TableCell>
             <TableCell align="right">
                 <IconButton edge="end" aria-label="comments" >
-                        <Edit />
+                        <FiEdit3 />
                 </IconButton>
 
                 <IconButton edge="end" aria-label="comments" onClick={() => handleDelete(clienteId.id)} type="button">
-                    <Delete color="action" />
+                    <FiDelete color="action" />
                 </IconButton>
             </TableCell>
         </TableRow>
