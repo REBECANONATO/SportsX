@@ -14,7 +14,7 @@ import './App.css';
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
+    minWidth: 700,
   },
 });
 
