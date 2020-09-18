@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsXAPI", "SportsX\SportsXAPI.csproj", "{6455F86E-4E31-4912-BCB2-4DB753A6063D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6455F86E-4E31-4912-BCB2-4DB753A6063D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6455F86E-4E31-4912-BCB2-4DB753A6063D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6455F86E-4E31-4912-BCB2-4DB753A6063D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6455F86E-4E31-4912-BCB2-4DB753A6063D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED528D54-6925-4FD2-904F-1D816C6966B9}
+	EndGlobalSection
+EndGlobal
