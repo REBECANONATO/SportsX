@@ -27,10 +27,11 @@ namespace ConsulAPI.Repositorio
             await _context.SaveChangesAsync();
         }
 
-        public async Task Inserir(Cliente entidade)
+        public async Task<Cliente> Inserir(Cliente entidade)
         {
             _context.Add(entidade);
             await _context.SaveChangesAsync();
+            return entidade;
         }
 
         public async Task<Cliente> SelecionarPorId(int id)

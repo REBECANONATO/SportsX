@@ -5,6 +5,6 @@ namespace ConsulAPI.Executor
 {
     public interface IAtualizarClienteExecutor
     {
-        public Task Executor(ClienteDto cliente);
+        public Task Executor(ClienteCreateDto cliente);
     }
 }

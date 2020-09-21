@@ -15,7 +15,7 @@ namespace ConsulAPI.Executor
             _repositorioGenerico = repositorioGenerico;
         }
 
-        async Task IAtualizarClienteExecutor.Executor(ClienteDto cliente)
+        async Task IAtualizarClienteExecutor.Executor(ClienteCreateDto cliente)
         {
             try
             {

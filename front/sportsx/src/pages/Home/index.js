@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from 'react';
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -22,30 +22,50 @@ const useStyles = makeStyles({
 function Home() {
   const [clientes, setClientes] = useState([]);
   const classes = useStyles();
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     async function loadClientes(){
-      const response = await api.get('/Clientes');
+      var response = await api.get('/Clientes');
+      setResults(response.data);
       setClientes(response.data);
     };
-
-
+    
     loadClientes();
   }, []);
 
+  var filtro = document.getElementById('filtro-pesquisa');
+  if(filtro !== null){
+    filtro.onkeyup = function() {
+      var nomeFiltro = filtro.value.toLowerCase().trim();
+      let clienteAux = [];
+      results.forEach( x => {
+        var cliente = x.nomeRazaoSocial;
+        if(cliente.toLowerCase().indexOf(nomeFiltro) >= 0 && nomeFiltro !== ""){
+          clienteAux.push(x);
+        }
+      });
+      setClientes(clienteAux);
+    };
+  }
+
   return (
     <div id="app">
-      <header>
-        <strong>Teste Técnico</strong>
-        <h3>Controle Clientes SportsX</h3>
+      <header className="contentMenu">
+        <nav className="navbar">
+          <strong className="navbar__logo">Teste Técnico</strong>
+          <h3 className="navbar__logo">Controle Clientes SportsX</h3>
 
-        <Link className="button" type="submit" to="/cadastrar">
-          Cadastrar Novo Cliente
-        </Link>
+          <Link className="button navbar__logo" type="submit" to="/cadastrar">
+            Cadastrar Novo Cliente
+          </Link>
+
+          <ul className="navbar__menu">
+            <input id="filtro-pesquisa" className="button--sign-up" placeholder="Pesquisar"/>
+          </ul>
+        </nav>
       </header>
-      <br />
-      <hr />
-      <br />
+
       <main>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">

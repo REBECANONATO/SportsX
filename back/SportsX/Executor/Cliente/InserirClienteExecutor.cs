@@ -15,11 +15,11 @@ namespace ConsulAPI.Executor
             _repositorioGenerico = repositorioGenerico;
         }
 
-        async Task IInserirClienteExecutor.Executor(ClienteDto cliente)
+        async Task<Cliente> IInserirClienteExecutor.Executor(ClienteCreateDto cliente)
         {
             try
             {
-                await _repositorioGenerico.Inserir(new Cliente
+                Cliente clienteNew = await _repositorioGenerico.Inserir(new Cliente
                 {
                     NomeRazaoSocial = cliente.NomeRazaoSocial,
                     CpfCnpj = cliente.CpfCnpj,
@@ -28,6 +28,7 @@ namespace ConsulAPI.Executor
                     Classificacao = cliente.Classificacao,
                     Telefone = cliente.Telefone
                 });
+                return clienteNew;
 
             }
             catch (Exception ex)

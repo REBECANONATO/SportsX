@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using ConsulAPI.Models.DTO;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -29,5 +31,9 @@ namespace ConsulAPI.Models
         [Column("classificacao")]
         public int Classificacao { get; set; }
 
+        public static implicit operator Cliente(ClienteDto v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ConsulAPI.Executor;
+using ConsulAPI.Models;
 using ConsulAPI.Models.DTO;
 using ConsulAPI.Models.Model;
 using Microsoft.AspNetCore.Cors;
@@ -48,7 +49,7 @@ namespace ConsulAPI.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _inserirClienteExecutor.Executor(new ClienteDto
+                Cliente clienteNew = await _inserirClienteExecutor.Executor(new ClienteCreateDto
                 {
                     NomeRazaoSocial = cliente.NomeRazaoSocial,
                     CpfCnpj = cliente.CpfCnpj,
@@ -58,7 +59,7 @@ namespace ConsulAPI.Controllers
                     Telefone = cliente.Telefone
                 });
 
-                return Ok();
+                return Ok(clienteNew);
             }
             return NotFound();
         }
@@ -71,7 +72,7 @@ namespace ConsulAPI.Controllers
             {
                 if (id != 0)
                 {
-                    await _atualizaClienteExecutor.Executor(new ClienteDto
+                    await _atualizaClienteExecutor.Executor(new ClienteCreateDto
                     {
                         Id = id,
                         NomeRazaoSocial = cliente.NomeRazaoSocial,

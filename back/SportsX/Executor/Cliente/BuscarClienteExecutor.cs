@@ -2,6 +2,7 @@
 using ConsulAPI.Models.DTO;
 using ConsulAPI.Models.Model;
 using ConsulAPI.Repositorio;
+using SportsXAPI.Models.Enum;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace ConsulAPI.Executor
                     CpfCnpj = cliente.CpfCnpj,
                     Cep = cliente.Cep,
                     Email = cliente.Email,
-                    Classificacao = cliente.Classificacao,
+                    Classificacao = VerificarClassificacao(cliente.Classificacao),
                     Telefone = cliente.Telefone
                 });
 
@@ -50,13 +51,31 @@ namespace ConsulAPI.Executor
                         CpfCnpj = cliente.CpfCnpj,
                         Cep = cliente.Cep,
                         Email = cliente.Email,
-                        Classificacao = cliente.Classificacao,
+                        Classificacao = VerificarClassificacao(cliente.Classificacao),
                         Telefone = cliente.Telefone
                     });
                 }
             }
 
             return resposta;
+        }
+
+        private string VerificarClassificacao(int classificacao)
+        {
+            string classificacaoTexto = "";
+            switch (classificacao)
+            {
+                case (int)EClassificacao.Ativo:
+                    classificacaoTexto = EClassificacao.Ativo.ToString();
+                    break;
+                case (int)EClassificacao.Preferencial:
+                    classificacaoTexto = EClassificacao.Preferencial.ToString();
+                    break;
+                case (int)EClassificacao.Inativo:
+                    classificacaoTexto = EClassificacao.Inativo.ToString();
+                    break;
+            }
+            return classificacaoTexto;
         }
     }
 }

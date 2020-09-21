@@ -8,7 +8,7 @@ namespace ConsulAPI.Repositorio
     {
         public Task<List<Cliente>> SelecionarTodos();
         public Task<Cliente> SelecionarPorId(int id);
-        public Task Inserir(Cliente entidade);
+        public Task<Cliente> Inserir(Cliente entidade);
         public Task Atualizar(Cliente entidade);
         public Task Excluir(int id);
     }

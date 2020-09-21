@@ -9,12 +9,18 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
+    "browserslist": "^4.6.3",
+    "cpf-cnpj-validator": "^1.0.3",
+    "inputmask": "^5.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",
     "react-input-mask": "^2.0.4",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-tag-input": "^6.4.3",
+    "remask": "^0.1.0-alpha.5",
+    "vanilla-masker": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,16 +31,5 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": []
 }
